@@ -1,0 +1,158 @@
+html, body {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1;
+	color: #9197B3;
+	overflow-x: hidden;
+}
+
+body {
+	background-color: #FAFBFF;
+	font-family: 'Poppins', serif;
+	font-size: 1rem;
+	min-width: 100%;
+}
+
+button {
+	background-color: transparent;
+}
+
+.wrapper {
+	min-height: 1198px;
+	height: 100vh;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: minmax(auto, 306px) 1fr;
+	column-gap: 70px;
+	display: grid;
+	grid-template-areas: 'sidebar header'
+	'sidebar tableContent';
+}
+
+.header {
+	grid-area: header;
+	padding-top: 39px;
+	&__title {
+		font-weight: 500;
+		font-size: 1.714rem;
+		line-height: 1.5;
+		color: #000000;
+	}
+}
+
+.logo {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	transition: .3s ease;
+	&__title {
+		font-weight: 600;
+		font-size: 1.857rem;
+		line-height: 1.4;
+		color: #000;
+		letter-spacing: 0.01em;
+		span {
+			margin-left: -2px;
+			font-weight: 500;
+			font-size: 0.714rem;
+			line-height: 1.25;
+			letter-spacing: -0.01em;
+			color: #838383;
+		}
+	}
+	&:hover {
+		opacity: 0.75;
+	}
+}
+
+.sidebar {
+	grid-area: sidebar;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: #FFFFFF;
+	padding: 38px 28px;
+	box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+	&__list {
+		margin-top: 52px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		width: 100%;
+		padding: 10px 10px;
+		transition: .4s ease-in;
+		border-radius: 8px;
+		&:hover {
+			background: #5932EA;
+			.sidebar__text {
+				color: #fff;
+				svg {
+					stroke: #fff;
+				}
+			}
+			.fill {
+				stroke: transparent;
+				fill: #fff;
+				&.special {
+					fill: transparent;
+					stroke: #fff;
+				}
+			}
+			svg {
+				stroke: #fff;
+			}
+		}
+		svg {
+			transition: .4s ease-in;
+		}
+		&.active {
+			background: #5932EA;
+			.sidebar__text {
+				color: #fff;
+			}
+			svg {
+				stroke: #fff;
+			}
+		}
+	}
+	&__text-block {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__text {
+		font-size: 1rem;
+		line-height: 1.5;
+		color: #9197B3;
+		transition: .4s ease-in;
+	}
+	&__user {
+		display: flex;
+		align-items: center;
+		margin-bottom: 38px;
+		gap: 12px;
+	}
+	&__name {
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+		color: #000000;
+	}
+	&__position {
+		font-weight: 400;
+		font-size: 0.85rem;
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+		color: #757575;
+	}
+}
+
+.table {
+	grid-area: tableContent;
+}
