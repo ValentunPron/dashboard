@@ -1,8 +1,8 @@
 import user01 from "../assest/image/sidebar/people01.jpg"
 
-export const Sidebar = () => {
+export const Sidebar = (props) => {
 	return (
-		<div className="sidebar">
+		<div className={`sidebar ${props.burgerStatus ? 'active' : ''}`}>
 			<div className="sidebar__info">
 				<a href="#s" className="sidebar__logo logo" tabIndex={0}>
 					<svg width="37" height="37" viewBox="0 0 37 37" fill="#000" xmlns="http://www.w3.org/2000/svg">

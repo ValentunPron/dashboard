@@ -17,6 +17,39 @@ button {
 	background-color: transparent;
 }
 
+
+.burger {
+	position: relative;
+	width: 32px;
+	height: 20px;
+	display: none;
+	transition: 0.4s ease;
+	&::before, &::after {
+		position: absolute;
+		content: '';
+		left: 0;
+		width: 100%; height: 2px;
+		background-color: #5932EA;
+		transition: 0.4s ease;
+	}
+	&::before {
+		top: 0px;
+	}
+	&::after {
+		bottom: 0px;
+	}
+	span {
+		position: absolute;
+		content: '';
+		left: 0; top: 0; bottom: 0;
+		margin: auto;
+		width: 100%; height: 2px;
+		background-color: #5932EA;
+		transition: 0.4s ease;
+	}
+}
+
+
 .wrapper {
 	min-height: 1198px;
 	height: 100vh;
@@ -175,20 +208,24 @@ button {
 }
 
 .table {
+	margin-right: 20px;
 	position: relative;
 	grid-area: tableContent;
-	background: #FFFFFF;
-	box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
-	border-radius: 30px;
 	max-width: 968px;
 	max-height: 812px;
-	padding: 30px 38px 40px 38px;
-	&::before {
-		position: absolute;
-		content: '';
-		width: 100%; height: 1px;
-		background: #EEEEEE;
-		top: 166px; left: 0;
+	&__body {
+		position: relative;
+		background: #FFFFFF;
+		box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+		border-radius: 30px;
+		padding: 30px 38px 40px 38px;
+		&::before {
+			position: absolute;
+			content: '';
+			width: 100%; height: 1px;
+			background: #EEEEEE;
+			top: 166px; left: 0;
+		}
 	}
 	&__top {
 		display: flex;
@@ -349,3 +386,225 @@ button {
 	}
 }
 
+@media (max-width: 1240px) {
+	html, body {
+		font-size: calc(9px + (14 - 9) * ((100vw - 768px) / (1200 - 768)));
+	}
+	.wrapper {
+		display: inline-grid;
+		row-gap: 30px;
+		grid-template-columns: minmax(auto, 220px) auto;
+		grid-template-rows: auto auto;
+		column-gap: 25px;
+		width: 100%;
+		min-height: 600px;
+	}
+	.sidebar {
+		padding: 35px 15px;
+		&__item {
+			gap: 10px;
+			svg {
+				width: 25px;
+			}
+		}
+		&__text {
+			font-size: 1.2rem;
+		}
+		&__text-block {
+			svg {
+				width: 13px;
+			}
+		}
+		&__user {
+			img {
+				width: 36px; height: 36px;
+			}
+		}
+	}
+	.logo {
+		svg {
+			width: 30px;
+			height: auto;
+		}
+		&__title {
+			font-size: 1.5rem;
+		}
+	}
+	.header {
+		margin-left: 10px;
+	}
+	.table {
+		margin-bottom: 40px;
+		&__body {
+			padding: 20px calc((1vh + 1vw) * 1);
+			&::before {
+				top: 21.5%;
+			}
+		}
+		&__bottom-button {
+			position: relative;
+			max-width: 20px; max-height: 20px;
+			width: 100%; height: 100%;
+			svg {
+				position: absolute;
+			}
+		}
+		&__action {
+			gap: 10px;
+		}
+	}
+	.status {
+		font-size: 0.8rem !important;
+		min-width: calc((1vh + 1vw) * 3);
+	}
+}
+
+@media (max-width: 772px) {
+	html, body {
+		font-size: calc(7px + (12 - 7) * ((100vw - 420px) / (768 - 420)));
+	}
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.burger {
+		display: block;
+	}
+
+	.header {
+		margin-right: 10px;
+		margin-left: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.sidebar {
+		position: fixed;
+		right: -200%; top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 20;
+		transition: 0.6s ease;
+		&.active {
+			right: 0;
+			transition: 0.4s ease;
+		}
+	}
+
+	.burger {
+		position: relative;
+		z-index: 21;
+		&.active {
+			&::before, &::after {
+				top: 0; bottom: 0; right: 0; left: 0;
+				margin: auto;
+			}
+			&::before {
+				transform: rotate(45deg);
+			}
+			&::after {
+				transform: rotate(-45deg);
+			}
+			span {
+				opacity: 0;
+			}
+		}
+	}
+
+	.table {
+		margin: 0px;
+		height: 100%;
+		width: 100%;
+		&__body {
+			border-radius: 0;
+			padding: 30px 10px;
+			height: 100%;
+			&::before {
+				top: 23%;
+			}
+		}
+		&__searh {
+			margin: 0;
+			min-width: calc((1vh + 1vw) * 5);
+			padding: 5px;
+		}
+		&__search-button {
+			svg {
+				width: 20px;
+			}
+		}
+		&__item {
+			span {
+				line-height: 1;
+			}
+		}
+		&__top-input {
+			font-size: 1.1rem;
+		}
+		&__action {
+			gap: 8px;
+		}
+		&__bottom {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+		&__bottom-button {
+			svg {
+				width: 6px;
+			}
+		}
+	}
+	.status {
+		margin-top: 0;
+		font-size: 0.7rem !important;
+
+		padding: 5px 0;
+		max-width: 32px;
+	}
+}
+
+@media (max-width: 420px) {
+	html, body {
+		font-size: calc(6px + (7 - 6) * ((100vw - 320px) / (420 - 320)));
+	}
+	.table {
+		&__searh {
+			padding: 5px;
+			align-items: center;
+		}
+		&__search-button {
+			display: flex;
+			align-items: center;
+			svg {
+				width: 10px; height: 10px;
+			}
+		}
+		&__item.tableContent {
+			padding: 15px 0;
+		}
+		&__name {
+			flex: 0 1 17%;
+		}
+		&__company {
+			flex:  0 1 12%;
+		}
+		&__phone {
+			flex: 0 1 20%;
+		}
+		&__email {
+			flex: 0 1 25%;
+		}
+		&__country {
+			flex: 0 1 16%;
+		}
+	}
+	.status {
+		max-width: 0;
+		min-width: 0;
+		background: transparent;
+		border: 0px !important;
+	}
+}

@@ -2,7 +2,7 @@ export const Table = () => {
 
 	return (
 		<div className="table">
-			<div className="container">
+			<div className="table__body">
 				<div className="table__top">
 					<div className="table__top-text">
 						<h3 className="table__top-title">All Customers</h3>
