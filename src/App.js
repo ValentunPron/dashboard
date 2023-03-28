@@ -1,4 +1,4 @@
-import { Sidebar } from "./components";
+import { Sidebar, Table } from "./components";
 
 function App() {
   return (
@@ -7,9 +7,7 @@ function App() {
           <h1 className="header__title">Hello Evano <icon>👋🏼</icon>,</h1>
         </header>
         <Sidebar />
-        <div className="table">
-          table
-        </div>
+        <Table />
     </div>
   );
 }
