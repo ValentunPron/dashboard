@@ -1,19 +1,123 @@
 import React from "react";
+import axios from "axios";
+import { tab } from "@testing-library/user-event/dist/tab";
+
+const userAPI = [
+	{
+		name: "Jane Cooper",
+		company: "Microsoft",
+		phone: "(225) 555-0118",
+		email: "jane@microsoft.com",
+		country: "United States",
+		status: true
+	},
+	{
+		name: "Floyd Miles",
+		company: "Yahoo",
+		phone: "(205) 555-0100",
+		email: "floyd@yahoo.com",
+		country: "Kiribati",
+		status: false
+	},
+	{
+		name: "Ronald Richards",
+		company: "Adobe",
+		phone: "(302) 555-0107",
+		email: "ronald@adobe.com",
+		country: "Israel",
+		status: false
+	},
+	{
+		name: "Marvin McKinney",
+		company: "Tesla",
+		phone: "(252) 555-0126",
+		email: "marvin@tesla.com",
+		country: "Iran",
+		status: true
+	},
+	{
+		name: "Jerome Bell",
+		company: "Google",
+		phone: "(629) 555-0129",
+		email: "jerome@google.com",
+		country: "Réunion",
+		status: true
+	},
+	{
+		name: "Kathryn Murphy",
+		company: "Microsoft",
+		phone: "(406) 555-0120",
+		email: "kathryn@microsoft.com",
+		country: "Curaçao",
+		status: true
+	},
+	{
+		name: "Jacob Jones",
+		company: "Yahoo",
+		phone: "(208) 555-0112",
+		email: "jacob@yahoo.com",
+		country: "Brazil",
+		status: true
+	},
+	{
+		name: "Kristin Watson",
+		company: "Facebook",
+		phone: "(704) 555-0127",
+		email: "kristin@facebook.com",
+		country: "Åland Islands",
+		status: false
+	},
+
+]
+
+function searchByName(name, contacts) {
+	return contacts.filter(contact => contact.name.toLowerCase().includes(name.toLowerCase()));
+}
+
+function searchByCompany(name, contacts) {
+	return contacts.filter(contact => contact.company.toLowerCase().includes(name.toLowerCase()));
+}
+
+function searchByNumber(name, contacts) {
+	return contacts.filter(contact => contact.phone.toLowerCase().includes(name.toLowerCase()));
+}
+
+function searchByEmail(name, contacts) {
+	return contacts.filter(contact => contact.email.toLowerCase().includes(name.toLowerCase()));
+}
+
+
+function searchByCountry(name, contacts) {
+	return contacts.filter(contact => contact.country.toLowerCase().includes(name.toLowerCase()));
+}
+
+
+
 
 export const Table = () => {
 
 	const refInput = React.useState(null);
+	const [table, setTable] = React.useState([]);
 
 	React.useEffect(() => {
-		fetch('./db.json')
-			.then(response => response.json())
-			.then(data => {
-				console.log(data)
-			})
+		setTable(userAPI);
 	}, [])
 
 	const searchValue = () => {
-		console.log(refInput.current.value);
+		const value = refInput.current.value;
+		if (searchByName(value, userAPI).length > 0) {
+			setTable(searchByName(value, userAPI));
+		} else if (searchByCompany(value, userAPI).length > 0) {
+			setTable(searchByCompany(value, userAPI))
+		} else if (searchByNumber(value, userAPI).length > 0) {
+			setTable(searchByNumber(value, userAPI))
+		} else if (searchByEmail(value, userAPI).length > 0) {
+			setTable(searchByEmail(value, userAPI))
+		} else if (searchByCountry(value, userAPI).length > 0) {
+			setTable(searchByCountry(value, userAPI))
+		} else {
+			setTable([]);
+		}
 	}
 
 	return (
@@ -44,70 +148,24 @@ export const Table = () => {
 							<span className="table__country">Country</span>
 							<span className="table__status">Status</span>
 						</li>
-						<li className="table__item tableContent">
-							<span className="table__name">Jane Cooper</span>
-							<span className="table__company">Microsoft</span>
-							<span className="table__phone">(225) 555-0118</span>
-							<span className="table__email">jane@microsoft.com</span>
-							<span className="table__country">United States</span>
-							<span className="table__status status">Active</span>
-						</li>
-						<li className="table__item tableContent">
-							<span className="table__name">Floyd Miles</span>
-							<span className="table__company">Yahoo</span>
-							<span className="table__phone">(205) 555-0100</span>
-							<span className="table__email">floyd@yahoo.com</span>
-							<span className="table__country">Kiribati</span>
-							<span className="table__status status inactive">Inactive</span>
-						</li>
-						<li className="table__item tableContent">
-							<span className="table__name">Ronald Richards</span>
-							<span className="table__company">Adobe</span>
-							<span className="table__phone">(302) 555-0107</span>
-							<span className="table__email">ronald@adobe.com</span>
-							<span className="table__country">Israel</span>
-							<span className="table__status status inactive">Inactive</span>
-						</li>
-						<li className="table__item tableContent">
-							<span className="table__name">Marvin McKinney</span>
-							<span className="table__company">Tesla</span>
-							<span className="table__phone">(252) 555-0126</span>
-							<span className="table__email">marvin@tesla.com</span>
-							<span className="table__country">Iran</span>
-							<span className="table__status status">Active</span>
-						</li>
-						<li className="table__item tableContent">
-							<span className="table__name">Jerome Bell</span>
-							<span className="table__company">Google</span>
-							<span className="table__phone">(629) 555-0129</span>
-							<span className="table__email">jerome@google.com</span>
-							<span className="table__country">Réunion</span>
-							<span className="table__status status">Active</span>
-						</li>
-						<li className="table__item tableContent">
-							<span className="table__name">Kathryn Murphy</span>
-							<span className="table__company">Microsoft</span>
-							<span className="table__phone">(406) 555-0120</span>
-							<span className="table__email">kathryn@microsoft.com</span>
-							<span className="table__country">Curaçao</span>
-							<span className="table__status status">Active</span>
-						</li>
-						<li className="table__item tableContent">
-							<span className="table__name">Jacob Jones</span>
-							<span className="table__company">Yahoo</span>
-							<span className="table__phone">(208) 555-0112</span>
-							<span className="table__email">jacob@yahoo.com</span>
-							<span className="table__country">Brazil</span>
-							<span className="table__status status">Active</span>
-						</li>
-						<li className="table__item tableContent">
-							<span className="table__name">Kristin Watson</span>
-							<span className="table__company">Facebook</span>
-							<span className="table__phone">(704) 555-0127</span>
-							<span className="table__email">kristin@facebook.com</span>
-							<span className="table__country">Åland Islands</span>
-							<span className="table__status status inactive">Inactive</span>
-						</li>
+						{
+							table.length > 1
+								? table.map((obj) => (
+									<li className="table__item tableContent">
+										<span className="table__name">{obj.name}</span>
+										<span className="table__company">{obj.company}</span>
+										<span className="table__phone">{obj.phone}</span>
+										<span className="table__email">{obj.email}</span>
+										<span className="table__country">{obj.country}</span>
+										{
+											obj.status
+												? <span className="table__status status">Active</span>
+												: <span className="table__status status inactive">Inactive</span>
+										}
+									</li>
+								))
+								: <h3 className="table__not-found">User not found</h3>
+						}
 					</ul>
 				</div>
 				<div className="table__bottom">
