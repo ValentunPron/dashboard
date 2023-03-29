@@ -14,10 +14,10 @@ export const Sidebar = (props) => {
 				<div className="sidebar__list">
 					<button className="sidebar__item" tabIndex={1}>
 						<svg width="28" height="28" viewBox="0 0 24 24" stroke="#9197B3" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M16.28 13.61C15.15 14.74 13.53 15.09 12.1 14.64L9.51001 17.22C9.33001 17.41 8.96001 17.53 8.69001 17.49L7.49001 17.33C7.09001 17.28 6.73001 16.9 6.67001 16.51L6.51001 15.31C6.47001 15.05 6.60001 14.68 6.78001 14.49L9.36001 11.91C8.92001 10.48 9.26001 8.86001 10.39 7.73001C12.01 6.11001 14.65 6.11001 16.28 7.73001C17.9 9.34001 17.9 11.98 16.28 13.61Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M10.45 16.28L9.59998 15.42" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M13.3945 10.7H13.4035" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M16.28 13.61C15.15 14.74 13.53 15.09 12.1 14.64L9.51001 17.22C9.33001 17.41 8.96001 17.53 8.69001 17.49L7.49001 17.33C7.09001 17.28 6.73001 16.9 6.67001 16.51L6.51001 15.31C6.47001 15.05 6.60001 14.68 6.78001 14.49L9.36001 11.91C8.92001 10.48 9.26001 8.86001 10.39 7.73001C12.01 6.11001 14.65 6.11001 16.28 7.73001C17.9 9.34001 17.9 11.98 16.28 13.61Z" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M10.45 16.28L9.59998 15.42" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M13.3945 10.7H13.4035" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 						</svg>
 						<div className="sidebar__text-block">
 							<span className="sidebar__text">Dashboard</span>
@@ -35,7 +35,7 @@ export const Sidebar = (props) => {
 								Product
 							</span>
 							<svg width="16" height="16" viewBox="0 0 16 16" stroke="#9197B3" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M6 12L10 8L6 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M6 12L10 8L6 4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 							</svg>
 						</div>
 					</button>
@@ -48,22 +48,22 @@ export const Sidebar = (props) => {
 						<div className="sidebar__text-block">
 							<span className="sidebar__text">Customers</span>
 							<svg width="16" height="16" viewBox="0 0 16 16" stroke="#9197B3" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M6 12L10 8L6 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M6 12L10 8L6 4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 							</svg>
 						</div>
 					</button>
 					<button className="sidebar__item" tabIndex={1}>
 						<svg width="28" height="28" viewBox="0 0 24 24" stroke="#9197B3" fill="transparent" xmlns="http://www.w3.org/2000/svg">
-							<path d="M10.7516 16.8604V18.8904C10.7516 20.6104 9.15158 22.0004 7.18158 22.0004C5.21158 22.0004 3.60156 20.6104 3.60156 18.8904V16.8604C3.60156 18.5804 5.20158 19.8004 7.18158 19.8004C9.15158 19.8004 10.7516 18.5704 10.7516 16.8604Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M10.7501 14.11C10.7501 14.61 10.6101 15.07 10.3701 15.47C9.78006 16.44 8.57004 17.05 7.17004 17.05C5.77004 17.05 4.56003 16.43 3.97003 15.47C3.73003 15.07 3.59009 14.61 3.59009 14.11C3.59009 13.25 3.99007 12.48 4.63007 11.92C5.28007 11.35 6.17003 11.01 7.16003 11.01C8.15003 11.01 9.04006 11.36 9.69006 11.92C10.3501 12.47 10.7501 13.25 10.7501 14.11Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M10.7516 14.11V16.86C10.7516 18.58 9.15158 19.8 7.18158 19.8C5.21158 19.8 3.60156 18.57 3.60156 16.86V14.11C3.60156 12.39 5.20158 11 7.18158 11C8.17158 11 9.06161 11.35 9.71161 11.91C10.3516 12.47 10.7516 13.25 10.7516 14.11Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M22 10.9699V13.03C22 13.58 21.56 14.0299 21 14.0499H19.0399C17.9599 14.0499 16.97 13.2599 16.88 12.1799C16.82 11.5499 17.0599 10.9599 17.4799 10.5499C17.8499 10.1699 18.36 9.94995 18.92 9.94995H21C21.56 9.96995 22 10.4199 22 10.9699Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M2 10.5V8.5C2 5.78 3.64 3.88 6.19 3.56C6.45 3.52 6.72 3.5 7 3.5H16C16.26 3.5 16.51 3.50999 16.75 3.54999C19.33 3.84999 21 5.76 21 8.5V9.95001H18.92C18.36 9.95001 17.85 10.17 17.48 10.55C17.06 10.96 16.82 11.55 16.88 12.18C16.97 13.26 17.96 14.05 19.04 14.05H21V15.5C21 18.5 19 20.5 16 20.5H13.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M10.7516 16.8604V18.8904C10.7516 20.6104 9.15158 22.0004 7.18158 22.0004C5.21158 22.0004 3.60156 20.6104 3.60156 18.8904V16.8604C3.60156 18.5804 5.20158 19.8004 7.18158 19.8004C9.15158 19.8004 10.7516 18.5704 10.7516 16.8604Z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M10.7501 14.11C10.7501 14.61 10.6101 15.07 10.3701 15.47C9.78006 16.44 8.57004 17.05 7.17004 17.05C5.77004 17.05 4.56003 16.43 3.97003 15.47C3.73003 15.07 3.59009 14.61 3.59009 14.11C3.59009 13.25 3.99007 12.48 4.63007 11.92C5.28007 11.35 6.17003 11.01 7.16003 11.01C8.15003 11.01 9.04006 11.36 9.69006 11.92C10.3501 12.47 10.7501 13.25 10.7501 14.11Z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M10.7516 14.11V16.86C10.7516 18.58 9.15158 19.8 7.18158 19.8C5.21158 19.8 3.60156 18.57 3.60156 16.86V14.11C3.60156 12.39 5.20158 11 7.18158 11C8.17158 11 9.06161 11.35 9.71161 11.91C10.3516 12.47 10.7516 13.25 10.7516 14.11Z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M22 10.9699V13.03C22 13.58 21.56 14.0299 21 14.0499H19.0399C17.9599 14.0499 16.97 13.2599 16.88 12.1799C16.82 11.5499 17.0599 10.9599 17.4799 10.5499C17.8499 10.1699 18.36 9.94995 18.92 9.94995H21C21.56 9.96995 22 10.4199 22 10.9699Z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M2 10.5V8.5C2 5.78 3.64 3.88 6.19 3.56C6.45 3.52 6.72 3.5 7 3.5H16C16.26 3.5 16.51 3.50999 16.75 3.54999C19.33 3.84999 21 5.76 21 8.5V9.95001H18.92C18.36 9.95001 17.85 10.17 17.48 10.55C17.06 10.96 16.82 11.55 16.88 12.18C16.97 13.26 17.96 14.05 19.04 14.05H21V15.5C21 18.5 19 20.5 16 20.5H13.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
 						</svg>
 						<div className="sidebar__text-block">
 							<span className="sidebar__text">Income</span>
 							<svg width="16" height="16" viewBox="0 0 16 16" stroke="#9197B3" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M6 12L10 8L6 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M6 12L10 8L6 4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 							</svg>
 						</div>
 					</button>
@@ -77,7 +77,7 @@ export const Sidebar = (props) => {
 						<div className="sidebar__text-block">
 							<span className="sidebar__text">Promote</span>
 							<svg width="16" height="16" viewBox="0 0 16 16" stroke="#9197B3" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M6 12L10 8L6 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M6 12L10 8L6 4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 							</svg>
 						</div>
 					</button>
@@ -90,7 +90,7 @@ export const Sidebar = (props) => {
 						<div className="sidebar__text-block">
 							<span className="sidebar__text">Help</span>
 							<svg width="16" height="16" viewBox="0 0 16 16" stroke="#9197B3" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M6 12L10 8L6 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M6 12L10 8L6 4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 							</svg>
 						</div>
 					</button>

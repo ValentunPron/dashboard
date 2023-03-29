@@ -1,4 +1,20 @@
+import React from "react";
+
 export const Table = () => {
+
+	const refInput = React.useState(null);
+
+	React.useEffect(() => {
+		fetch('./db.json')
+			.then(response => response.json())
+			.then(data => {
+				console.log(data)
+			})
+	}, [])
+
+	const searchValue = () => {
+		console.log(refInput.current.value);
+	}
 
 	return (
 		<div className="table">
@@ -9,13 +25,13 @@ export const Table = () => {
 						<span className="table__top-subtitle">Active Members</span>
 					</div>
 					<div className="table__searh">
-						<button className="table__search-button">
+						<button className="table__search-button" onClick={searchValue} tabIndex={4}>
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7E7E7E" xmlns="http://www.w3.org/2000/svg">
 								<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 								<path d="M21 21L16.65 16.65" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 							</svg>
 						</button>
-						<input className="table__top-input" placeholder="Search" type="text" />
+						<input ref={refInput} className="table__top-input" placeholder="Search" type="text" tabIndex={3} />
 					</div>
 				</div>
 				<div className="table__content">
